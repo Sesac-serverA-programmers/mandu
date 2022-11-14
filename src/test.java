@@ -1,18 +1,15 @@
-import java.sql.Array;
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class test {
-    public static void main(String[] args) {
-        int a = 0;
-        int b= 
-        System.out.println(a);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String tmp = "a b c d e f";
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        while(st.hasMoreTokens()){
+            System.out.println(st.nextToken());
+        }
     }
 
 }
