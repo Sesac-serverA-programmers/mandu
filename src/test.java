@@ -1,22 +1,37 @@
 import java.util.*;
-import java.io.*;
-public class test {
-    static Integer[] dp;
-    public static void main(String[] args) throws IOException {
-      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-      int N = Integer.parseInt(br.readLine());
-         dp = new Integer[1002];
-        dp[1]=1;
-        dp[2]=2;
-
-     for(int i = 3 ; i <=N;i++){
-         dp[i]=(dp[i-1]+dp[i-2])%10007;
-     }
-        System.out.println(dp[N]%10007);
+class test {
+    static ArrayList<String> dic;
+    static String[] mo= {"A","E","I","O","U"};
 
 
+    public int solution(String word) {
+        int answer = 0;
+        ArrayList<String> dic = new ArrayList<>();
+        dic.add(recur(""));
+        for(String s : dic){
+            if(s.equals(word)){
+                break;
+            }
+            answer++;
+
+        }
+        return answer;
     }
 
+
+    public static String  recur(String str){
+        if(str.length()==5) return str;
+
+        else{
+            for(int i = 0 ;i<mo.length;i++){
+                String newStr  = str + mo[i];
+                return recur(newStr);
+            }
+
+        }
+
+        return str;
     }
 
 
+}
