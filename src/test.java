@@ -1,37 +1,27 @@
 import java.util.*;
-class test {
-    static ArrayList<String> dic;
-    static String[] mo= {"A","E","I","O","U"};
 
+public class test {
+    public static void main(String[] args) {
+        HashMap<String,Integer> aa = new HashMap<>();
+        ArrayList<Integer> a = new ArrayList<>();
 
-    public int solution(String word) {
-        int answer = 0;
-        ArrayList<String> dic = new ArrayList<>();
-        dic.add(recur(""));
-        for(String s : dic){
-            if(s.equals(word)){
-                break;
-            }
-            answer++;
+        aa.put("aa",3);
+        aa.put("bb",5);
+        aa.put("cc",2);
 
+        for(Integer temp : aa.values()){
+            a.add(temp);
         }
-        return answer;
-    }
-
-
-    public static String  recur(String str){
-        if(str.length()==5) return str;
-
-        else{
-            for(int i = 0 ;i<mo.length;i++){
-                String newStr  = str + mo[i];
-                return recur(newStr);
-            }
+        for(Map.Entry<String,Integer> map : aa.entrySet()){
 
         }
 
-        return str;
+
+        System.out.println(aa.containsValue(2));
+        
     }
-
-
 }
+
+
+
+
